@@ -13,17 +13,6 @@ import { data, functions } from "./data.js";
 // console.log("data.pets", data.pets);
 
 
-//////////////////////////////////////
-////////////// ROUTES ////////////////
-//////////////////////////////////////
-
-// 👉 add routes here (from Chapter 9 wiki) ...
-
-// 👈
-
-export default router;
-
-
 
 function returnPassword(params) {
     let str = "";
@@ -53,3 +42,27 @@ function returnPassword(params) {
 function randomFromArray(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
+
+
+//////////////////////////////////////
+////////////// ROUTES ////////////////
+//////////////////////////////////////
+
+// 👉 add routes here (from Chapter 9 wiki) ...
+// Route 1: Return a common password
+router.get("/api/common", async function (req, res) {
+  res.send({ message: randomFromArray(data.common) });
+});
+
+// Route 2: Return a custom password based on parameters
+router.get("/api/custom", async function (req, res) {
+  console.log(`params = ${req.query.params}`);
+  res.send({ message: returnPassword(req.query.params) });
+});
+
+// 👈
+
+export default router;
+
+
+

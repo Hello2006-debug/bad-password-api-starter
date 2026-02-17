@@ -21,7 +21,7 @@ async function updatePassword() {
     let group1 = document.querySelector("input[name=group1]:checked");
     let group2 = document.querySelector("input[name=group2]:checked");
     console.log(group1,group2);
-    let url = "https://bad-password-api.vercel.app/api/custom?params=" + group1.value + "," + group2.value;
+    let url = "/api/custom?params=" + group1.value + "," + group2.value;
 
 
     await fetch(url)
@@ -29,5 +29,5 @@ async function updatePassword() {
     .then((json) => {
         password.value = json.message;
     })
-    .catch(err => console.err("Error fetching Password" , err));
+    .catch(err => console.error("Error fetching Password" , err));
 }
