@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "A simple Node Express Vercel example",
     "main": "api/index.js",
-    "author": "Owen Mundy",
+    "author": "Melissa Mugengano",
     "license": "MIT",
     "type": "module",
     "scripts": {
